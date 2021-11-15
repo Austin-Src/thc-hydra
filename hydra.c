@@ -580,7 +580,8 @@ void help(int32_t ext) {
   PRINT_EXTEND(ext, "  hydra -L userlist.txt -p defaultpw imap://192.168.0.1/PLAIN\n"
                     "  hydra -C defaults.txt -6 pop3s://[2001:db8::1]:143/TLS:DIGEST-MD5\n"
                     "  hydra -l admin -p password ftp://[192.168.0.0/24]/\n"
-                    "  hydra -L logins.txt -P pws.txt -M targets.txt ssh\n");
+                    "  hydra -L logins.txt -P pws.txt -M targets.txt ssh\n"
+                    "  hydra -l admin -P pass.txt 192.168.0.1 http-post-form "/file/path:username=^USER^&password=^PASS^&submit=Submit");
   exit(-1);
 }
 
